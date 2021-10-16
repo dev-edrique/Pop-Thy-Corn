@@ -148,8 +148,9 @@
 
                         </table>
                         <br><br>
-                        <input type="number" placeholder="Payment"><br><br>
-                        <input type="submit">
+                        <input type="number" placeholder="Payment" id="payment"><br><br>
+                        <input type="number" placeholder="Change" id="changeOfPay" readonly><br><br>
+                        <input type="submit" onclick="change()">
                     </div>
 
                 </div>
@@ -157,6 +158,7 @@
         </div>
 
         <script>
+            var totalPrice;
 
             function takeOrder(){
                 var qty = document.getElementById('quantity').value;
@@ -180,6 +182,7 @@
 
 
                 var total = price*qty;
+                totalPrice = total;
 
                 console.log(order)
                 console.log(qty)
@@ -188,6 +191,15 @@
                 document.getElementById('test1').innerHTML = "<td>"+order+"</td>";
                 document.getElementById('test2').innerHTML = "<td>"+qty+"</td>";
                 document.getElementById('test3').innerHTML = "<td>"+total+"</td>";
+            }
+
+            function change(){
+                var payment = document.getElementById('payment').value;
+                var total = payment - totalPrice;
+                
+                console.log(total);
+                
+                document.getElementById('changeOfPay').value = total;
             }
         </script>
 
