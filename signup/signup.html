@@ -18,19 +18,33 @@
     <body>
         <div class="signUpForm">
             <h2>Sign Up</h2>
-            <input type="text" placeholder="Username"><br><br>
+            <input type="text" placeholder="Username" id="user"><br><br>
+            <!--
             <input type="text" placeholder="First Name"><br><br>
             <input type="text" placeholder="Last Name"><br><br>
             <input type="email" placeholder="Email"><br><br>
-            <input type="password" placeholder="Password"><br><br>
+            -->
+            <input type="password" placeholder="Password" id="pass"><br><br>
             <input type="submit" value="Sign Up" onclick="signUp()">
         </div>
     </body>
 
     <script>
         function signUp(){
-            alert("Account created!");
-            location.replace("../login/login.html");
+            var newUser = document.getElementById('user').value;
+            var newPass = document.getElementById('pass').value;
+
+            //checks if empty
+            if(newUser == ""){
+                alert("Username is empty!");
+            }
+            else if(newPass == ""){
+                alert("Password is empty!");
+            }
+            else{
+                alert("Sign Up Success!");
+                location.replace("../login/login.html");
+            }
         }
     </script>
 
