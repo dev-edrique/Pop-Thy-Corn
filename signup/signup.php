@@ -70,17 +70,22 @@
             </ul>
         </div><br><br>
 
+        <?php session_start(); ?>
+
         <div class="signUpForm">
-            <h2>Sign Up</h2>
-            <input type="text" placeholder="Username" id="user"><br><br>
-            <input type="text" placeholder="First Name"><br><br>
-            <input type="text" placeholder="Last Name"><br><br>
-            <input type="email" placeholder="Email"><br><br>
-            <input type="password" placeholder="Password" id="pass"><br><br>
-            <input type="submit" value="Sign Up" onclick="signUp()">
+            <form action="process.php" method="POST">
+                <h2>Sign Up</h2>
+                <input type="text" placeholder="Username" name="username"><br><br>
+                <input type="text" placeholder="First Name" name="first_name"><br><br>
+                <input type="text" placeholder="Last Name" name="last_name"><br><br>
+                <input type="email" placeholder="Email" name="email"><br><br>
+                <input type="password" placeholder="Password" name="password"><br><br>
+                <input type="submit" value="Sign Up">
+            </form>
         </div>
     </body>
 
+    <!--
     <script>
         function signUp(){
             var newUser = document.getElementById('user').value;
@@ -99,5 +104,6 @@
             }
         }
     </script>
+    -->
 
 </html>
