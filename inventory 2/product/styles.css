@@ -1,0 +1,112 @@
+body {
+  font-family: "Lato", sans-serif;
+  background: #AF0909 !important;
+}
+
+img.logo{
+  height: 65%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.col-12{
+  background: #FFC100  !important;
+}
+
+h1{
+  text-align: left;
+  text-transform: capitalize;
+  text-indent: 5px;
+  font-size: 75%;
+  font-family: "Lato", sans-serif; 
+  color: #FFC100;
+  margin-top: 75%;
+}
+
+button.btn{
+  width: 1in;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.container{
+  border: 1px solid #000;
+  text-align: center;
+  padding: 24px;
+  border-collapse: collapse;
+  height: 250px;
+  width: 50%;
+  background-color: #ddd;
+  border-radius: 10px;
+
+}
+
+.table th{
+  border-radius: 10px;
+  border-color: black;
+
+}
+ 
+.table td{
+  border-radius: 10px;
+  border-color: black;
+}
+
+.table tr{
+  border-radius: 10px;
+  border-color: black;
+}
+
+.logout{
+  margin-top: 15px !important;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #FFC100;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color:  #AF0909;
+  text-decoration: none;
+  font-size: 25px;
+  text-indent: 2px;
+}
+
+.navbar a:hover {
+  background-color: #FFC100;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.dashbtn1{
+  position: absolute;
+  margin-top: 5px !important;
+  margin-left: 10in;
+  margin-right: auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 15%;
+  width: 100%;
+  background-color:  #FFC100;
+  color: white;
+  text-align: center;
+}
