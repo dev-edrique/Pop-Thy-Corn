@@ -6,9 +6,6 @@
 	session_start();
 	$conn = mysqli_connect('localhost', 'root', '', 'popthycorn');
 
-  //insert products
-  $products = array();
-
   //inserts user's order
   $userOrders = array();
 
@@ -16,25 +13,28 @@
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    //insert array
-    array_push($products, array($_POST['Butter'], $_POST['butterQtyTotal'], $_POST['butterPriceTotal']));
-    array_push($products, array($_POST['Cheese'], $_POST['cheeseQtyTotal'], $_POST['cheesePriceTotal']));
-    array_push($products, array($_POST['Caramel'], $_POST['caramelQtyTotal'], $_POST['caramelPriceTotal']));
-    array_push($products, array($_POST['Barbeque'], $_POST['bbqQtyTotal'], $_POST['bbqPriceTotal']));
-    $totalPrice = $_POST['sumOfAll'];
-
-    //removes empty
-    for($i = 0; $i<=count($products)-1 ;$i++){
-      if(empty($products[$i][1]) || empty($products[$i][2])){
-        //do nothing if empty qty & total
-      }
-      else{
-        //insert them in 
-        array_push($userOrders, array($products[$i][0], $products[$i][1], $products[$i][2]));
-      }
+    //if input not empty, insert in array
+    if(!empty($_POST['butterQtyTotal']) || !empty($_POST['butterPriceTotal'])){
+      array_push($userOrders, ($_POST['Butter'] . " " . $_POST['butterQtyTotal'] . "pc(s)  P" . $_POST['butterPriceTotal']));
     }
 
-    $query = "INSERT INTO orders (user_id, order_orders, order_total) VALUES ('".rand(1, 10)."', '".json_encode($userOrders)."', '".$totalPrice."')";
+    if(!empty($_POST['cheeseQtyTotal']) || !empty($_POST['cheesePriceTotal'])){
+      array_push($userOrders, ($_POST['Cheese'] . " " . $_POST['cheeseQtyTotal'] . "pc(s)  P" . $_POST['cheesePriceTotal']));
+    }
+
+    if(!empty($_POST['caramelQtyTotal']) || !empty($_POST['caramelPriceTotal'])){
+      array_push($userOrders, ($_POST['Caramel'] . " " . $_POST['caramelQtyTotal'] . "pc(s)  P" . $_POST['caramelPriceTotal']));
+    }
+
+    if(!empty($_POST['bbqQtyTotal']) || !empty($_POST['bbqPriceTotal'])){
+      array_push($userOrders, ($_POST['Barbeque'] . " " . $_POST['bbqQtyTotal'] . "pc(s)  P" . $_POST['bbqPriceTotal']));
+    }
+    
+    echo implode(" | ",$userOrders);
+    
+    $totalPrice = $_POST['sumOfAll'];
+
+    $query = "INSERT INTO orders (user_id, order_orders, order_total) VALUES ('".rand(1, 10)."', '".implode(" | ",$userOrders)."', '".$totalPrice."')";
 
     mysqli_query($conn, $query);
 
