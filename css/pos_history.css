@@ -1,0 +1,44 @@
+*{
+   font-family: Georgia, serif !important;[InternetShortcut]
+URL=https://github.com/jedrique/Pop-Thy-Corn
+
+}
+
+img.logo{
+   height: 150px;
+   display: block;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+.col-auto{
+   background-color: #E9C75A !important;
+}
+
+.header{
+   background: #630E0D !important;
+   margin: 0;
+   color: #E9C75A;
+   text-decoration: underline;
+}
+
+span{
+   color: #000;
+}
+
+span:hover{
+   background-color:#630E0D;
+   display: block;
+   height: 100% !important;
+   width: 100% !important;
+   color: #E9C75A;
+}
+
+.logout>button{
+   border-radius: 10px;
+   margin-top: 0in;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 4in;
+}
