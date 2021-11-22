@@ -1,0 +1,175 @@
+*{
+   font-family: Georgia, serif !important;
+}
+
+img.logo{
+   height: 150px;
+   display: block;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+.col-auto{
+   background-color: #E9C75A !important;
+}
+
+.header{
+   background: #630E0D !important;
+   margin: 0;
+   color: #E9C75A;
+   text-decoration: underline;
+}
+
+input[type="text"]{
+   border: none;
+   background-color: transparent;
+   text-align: center;
+}
+.orderButton{
+   text-align: center;
+   width: 100%;
+}
+
+span{
+   color: #000;
+}
+
+span:hover{
+   background-color:#630E0D;
+   display: block;
+   height: 100% !important;
+   width: 100% !important;
+   color: #E9C75A;
+}
+
+ul.order {
+list-style-type: none;
+float: left !important;
+}
+
+li.cb {
+display: inline-block;
+}
+
+input[type="checkbox"][id^="butterCheck"] {
+display: none;
+}
+
+input[type="checkbox"][id^="cheeseCheck"] {
+display: none;
+}
+
+input[type="checkbox"][id^="caramelCheck"] {
+display: none;
+}
+
+input[type="checkbox"][id^="bbqCheck"] {
+display: none;
+}
+
+label {
+border: 1px solid #fff;
+padding: 10px;
+display: block;
+position: relative;
+cursor: pointer;
+border-radius: 20px;
+}
+
+label:before {
+background-color: #630E0D !important;
+color: white;
+content: " ";
+display: block;
+border-radius: 50%;
+border: 1px solid grey;
+position: absolute;
+top: -5px;
+left: -5px;
+width: 25px;
+height: 25px;
+text-align: center;
+line-height: 28px;
+transition-duration: 0.4s;
+transform: scale(0);
+}
+
+label img {
+height: 200px;
+width: 200px;
+border-radius: 20px;
+transition-duration: 0.2s;
+transform-origin: 50% 50%;
+}
+
+:checked + label {
+border-color: #ddd;
+}
+
+:checked + label:before {
+content: "✓";
+background-color: #9B7909;
+transform: scale(1);
+}
+
+:checked + label img {
+transform: scale(0.9);
+box-shadow: 0 0 5px #333;
+z-index: -1;
+}
+
+input.qty{
+   display: block;
+   margin-left: auto;
+   margin-right: 1.2in;
+}
+
+input.summ{
+   display: block;
+   float: left !important;
+}
+
+table{
+   background-color: grey !important;
+   position: relative;
+   color: black !important;
+   text-align: center;
+   width: 20%;
+}
+td{
+   border: solid black 1px !important;
+}
+
+
+img.footimg{
+   height: 60px;
+}
+
+input.inLab{
+   text-align: center;
+}
+
+.logout>button{
+   border-radius: 10px;
+   margin-top: 0in;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 4in;
+}
+
+#modal{
+   margin-left: 4in;
+   top: 3.2in;
+   border-radius: 10px;
+   width: 100px;
+   position: absolute;
+}
+
+#cancel{
+   margin-left: 5.2in;
+   top: 3.2in;
+   border-radius: 10px;
+   width: 100px;
+   position: absolute;
+}
