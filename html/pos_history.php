@@ -7,6 +7,7 @@
       <title>Project</title>
       <!-- CSS Link -->
       <link rel="stylesheet" href="../css/pos_history.css">
+      <link rel="stylesheet" href="../css/general.css">
       <!-- Bootstrap CSS -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
    </head>
@@ -49,13 +50,46 @@
                   <hr>
                </div>
             </div>
-
+            
             <!-- 2ND COLUMN -->
             <div class="col">
                <div class="header">
                   <h1>Transaction History</h1>
-                  <hr>
                </div>
+               <!--Mine-->
+               <table class="center">
+                  <tr>
+                     <th>Invoice ID</th>
+                     <th>Order Description</th>
+                     <th>Total Amount</th>
+                     <th>Cash</th>
+                     <th>Change</th>
+                     <th>Date</th>
+                  </tr>
+
+                  <?php 
+                     $conn = new mysqli("localhost", "root" ,"" ,"popthycorn");
+
+                     $sql = "SELECT * FROM invoice";
+                     $result = $conn->query($sql);
+
+                     if($result->num_rows > 0){
+                        //displays data from db
+                        while($row = $result->fetch_assoc()){
+                           echo "<td>".$row['invoice_id']."</td>";
+                           echo "<td>".$row['order_desc']."</td>";
+                           echo "<td>".$row['total_amount']."</td>";
+                           echo "<td>".$row['cash']."</td>";
+                           echo "<td>".$row['cash_change']."</td>";
+                           echo "<td>".$row['date']."</td>";
+                        }
+                     }  
+                     else{
+                        echo "<td col-span='6'>No results</td>";
+                     }
+                  ?>
+               </table>
+
             </div><!--/2ND COLUMN-->
          </div> <!--/row flex-nowrap-->
       </div> <!--/container-fluid-->
