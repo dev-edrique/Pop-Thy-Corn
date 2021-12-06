@@ -23,6 +23,7 @@
                 <td>Product Name</td>
                 <td>Price</td>
                 <td>Qty</td>
+                <td>Actions</td>
             </tr>
 
             <?php 
@@ -35,18 +36,23 @@
                 if($result->num_rows > 0){
                     //displays data from db
                     while($row = $result->fetch_assoc()){
-                        echo "<tr>";
-                        echo "<td>".$row['product_id']."</td>";
-                        echo '<td>'."<img src='data:image/jpeg;base64,".base64_encode($row['product_img'])."'/>".'</td>';
-                        echo "<td>".$row['product_name']."</td>";
-                        echo "<td>".$row['product_price']."</td>";
-                        echo "<td>".$row['product_qty']."</td>";
-                        echo "</tr>";
+                        ?>
+                        <tr>
+                        <td><?php echo $row['product_id'] ?></td>
+                        <?php echo '<td>'."<img src='data:image/jpeg;base64,".base64_encode($row['product_img'])."'/>".'</td>'; ?>
+                        <td><?php echo $row['product_name'] ?></td>
+                        <td><?php echo $row['product_price'] ?></td>
+                        <td><?php echo $row['product_qty'] ?></td>
+                        <td><a href="#">Update</a></td>
+                        <td><a href="sql/delete.php?delete=<?php echo $row['product_id'] ?>">Delete</a></td>
+                        </tr>
+                        <?php
                     }
                  }  
                  else{
                     echo "<td col-span='6'>No results</td>";
                  }
+                 $conn->close();
             ?>
         </table>
 
