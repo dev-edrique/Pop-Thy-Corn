@@ -9,7 +9,7 @@
         }
         else{
             $test = $_SESSION['admin_id'];
-            echo "EMPTY";
+            echo $test;
         }
 ?>
 
@@ -61,5 +61,6 @@
 
             <input type="submit" value="Login">
         </form>
+        <a href="sql/logout.php"><button>Logout</button></a>
     </body>
 </html>
