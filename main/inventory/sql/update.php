@@ -6,12 +6,18 @@
     $product_price = "";
     $product_qty = "";
 
-    if(isset($_GET['delete'])){
-        $product_id = $_GET['delete'];
-        $conn->query("DELETE FROM products WHERE product_id=$product_id");
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $product_id = $_POST['product_id'];
+        $product_name = $_POST['product_name'];
+        $product_price = $_POST['product_price'];
+        $product_qty = $_POST['product_qty'];
 
-        echo "<script> alert('Product Removed!');
-        window.location.href = '../inventory_showProducts.php';
+        $conn->query("UPDATE products 
+        SET product_name='".$product_name."', product_qty='".$product_qty."', product_price='".$product_price."'
+        WHERE product_id=$product_id");
+
+        echo "<script> alert('Product Updated!');
+        window.location.href = '../inventory_update_form.php';
         </script>";
     }
 ?>

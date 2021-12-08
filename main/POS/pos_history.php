@@ -68,11 +68,13 @@
                   </tr>
 
                   <?php 
+                     //SQL
                      $conn = new mysqli("localhost", "root" ,"" ,"popthycorn");
 
                      $sql = "SELECT * FROM invoice";
                      $result = $conn->query($sql);
 
+                     //shows history
                      if($result->num_rows > 0){
                         //displays data from db
                         while($row = $result->fetch_assoc()){
