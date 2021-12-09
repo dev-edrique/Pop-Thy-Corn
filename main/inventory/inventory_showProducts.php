@@ -1,3 +1,11 @@
+<?php 
+        session_start();
+
+        //checking if logged in
+        if(!empty($_SESSION['admin_id'])){
+            $employee = $_SESSION['admin_id'];
+        }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +16,7 @@
         <link rel="stylesheet" href="../../css/inventory_showProducts.css">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <title>Inventory | New Product</title>
+        <title>Inventory | Display Products</title>
     </head>    
 
     <!-- <style>
@@ -30,16 +38,26 @@
                         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                             <li>
                                 <a href="inventory_showProducts.php" class="nav-link px-0 align-middle">
-                                    <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Inventory</span></a>
+                                    <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Inventory</span>
+                                </a>
                             </li>
                             
                             <li>
                                 <a href="inventory_insert.php" class="nav-link px-0 align-middle ">
-                                    <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Add Products</span></a>
+                                    <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Add Products</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="inventory_update_form.php" class="nav-link px-0 align-middle ">
+                                    <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Update Product</span>
+                                </a>
                             </li>
 
                             <div class="logout">
-                                <button type="button" class="btn btn-danger"><img src="https://img.icons8.com/external-others-sbts2018/50/000000/external-logout-social-media-basic-1-others-sbts2018.png" height="30px"/> Log Out</button>
+                                <a href="../admin/sql/logout.php">
+                                    <button type="button" class="btn btn-danger"><img src="https://img.icons8.com/external-others-sbts2018/50/000000/external-logout-social-media-basic-1-others-sbts2018.png" height="30px"/> Log Out</button>
+                                </a>
                             </div>
                         </ul>
                         <hr>
@@ -63,7 +81,7 @@
                                 <td>Product Name</td>
                                 <td>Price</td>
                                 <td>Qty</td>
-                                <td>Actions</td>
+                                <td></td>
                             </tr>
 
                             <?php 
@@ -83,8 +101,8 @@
                                             <td><?php echo $row['product_name'] ?></td>
                                             <td><?php echo $row['product_price'] ?></td>
                                             <td><?php echo $row['product_qty'] ?></td>
-                                            <td><a href="#" class="btn btn-warning">Update</a>
-                                            <a href="sql/delete.php?delete=<?php echo $row['product_id'] ?>" class="btn btn-danger">Delete</a></td>
+                                            <!-- <td><a href="#" class="btn btn-warning">Update</a> -->
+                                            <td><a href="sql/delete.php?delete=<?php echo $row['product_id'] ?>" class="btn btn-danger">Delete</a></td>
                                         </tr>
                                         <?php
                                     }

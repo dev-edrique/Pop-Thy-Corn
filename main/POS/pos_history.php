@@ -44,8 +44,10 @@
                      </li>
 
                      <div class="logout">
-                     <button type="button" class="btn btn-danger"><img src="https://img.icons8.com/external-others-sbts2018/50/000000/external-logout-social-media-basic-1-others-sbts2018.png" height="30px"/> Log Out</button>
-                  </div>
+                        <a href="../admin/sql/logout.php">
+                           <button type="button" class="btn btn-danger"><img src="https://img.icons8.com/external-others-sbts2018/50/000000/external-logout-social-media-basic-1-others-sbts2018.png" height="30px"/> Log Out</button>
+                        </a>
+                     </div>
                   </ul>
                   <hr>
                </div>

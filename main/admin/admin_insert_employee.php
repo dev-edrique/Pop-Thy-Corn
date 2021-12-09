@@ -20,7 +20,14 @@
             <label>Password: </label>
             <input type="password" name="password"><br><br>
 
-            <input type="submit" value="Add Employee">
+            <select name="admin_status">
+                <option value="POS">POS</option>
+                <option value="INVEN">INVEN</option>
+                <option value="ADMIN">ADMIN</option>
+            </select><br><br>
+
+            <input type="submit" value="Add Employee"><br><br>
+            <a href="sql/logout.php">Logout</a>
 
             <?php 
                 require_once '../../config/dbConfig.php';
@@ -30,15 +37,17 @@
                 $last_name = "";
                 $contact_number = "";
                 $password = "";
+                $admin_status = "";
 
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $first_name = $_POST['first_name'];
                     $last_name = $_POST['last_name'];
                     $contact_number = $_POST['contact_number'];
                     $password = $_POST['password'];
+                    $admin_status = $_POST['admin_status'];
 
-                    $sql = "INSERT INTO employee (first_name, last_name, contact_number, password) 
-                    VALUES ('".$first_name."', '".$last_name."', '".$contact_number."', '".$password."');";
+                    $sql = "INSERT INTO employee (first_name, last_name, contact_number, password, admin_status) 
+                    VALUES ('".$first_name."', '".$last_name."', '".$contact_number."', '".$password."', '".$admin_status."');";
 
                     if($conn->query($sql)){
                         echo "<script> alert('Employee added!');</script>";

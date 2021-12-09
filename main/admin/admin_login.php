@@ -1,15 +1,10 @@
 <?php 
-        session_start();
         require_once '../../config/dbConfig.php';
+        session_start();
 
-        //checking
-        if(empty($_SESSION['admin_id'])){
-            $test = "";
-            echo "EMPTY";
-        }
-        else{
-            $test = $_SESSION['admin_id'];
-            echo $test;
+        //checking if logged in
+        if(!empty($_SESSION['admin_id'])){
+            $employee = $_SESSION['admin_id'];
         }
 ?>
 
@@ -46,21 +41,37 @@
 
                         //password
                         if($result['password'] == $admin_password){
-                            echo "<script> alert('Login Success!');</script>";
-                            $_SESSION['admin_id'] = $admin_id;
+                            if($result['admin_status'] == "ADMIN"){
+                                $_SESSION['admin_id'] = $admin_id;
+                                echo "<script> alert('Login Success!');
+                                window.location.href = '../admin/admin_insert_employee.php';
+                                </script>";
+                            }
+                            else if($result['admin_status'] == "POS"){
+                                $_SESSION['admin_id'] = $admin_id;
+                                echo "<script> alert('Login Success!');
+                                window.location.href = '../POS/pos_history.php';
+                                </script>";
+                            }
+                            else if($result['admin_status'] == "INVEN"){
+                                $_SESSION['admin_id'] = $admin_id;
+                                echo "<script> alert('Login Success!');
+                                window.location.href = '../inventory/inventory_showProducts.php';
+                                </script>";
+                            }
                         }
                         else{
-                            echo "<script> alert('Incorrect Password');</script>";
+                            echo "<script> alert('Incorrect Username/Password');</script>";
                         }
                     }
                     else{
-                        echo "<script> alert('Employee does not exist!');</script>";
+                        //echo "<script> alert('Employee does not exist!');</script>";
+                        echo "<script> alert('Incorrect Username/Password');</script>";
                     }
                 }
             ?>
 
             <input type="submit" value="Login">
         </form>
-        <a href="sql/logout.php"><button>Logout</button></a>
     </body>
 </html>

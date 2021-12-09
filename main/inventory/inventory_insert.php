@@ -1,3 +1,11 @@
+<?php 
+        session_start();
+
+        //checking if logged in
+        if(!empty($_SESSION['admin_id'])){
+            $employee = $_SESSION['admin_id'];
+        }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,9 +38,16 @@
                                     <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Add Products</span></a>
                             </li>
 
+                            <li>
+                                <a href="inventory_update_form.php" class="nav-link px-0 align-middle ">
+                                    <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Update Product</span>
+                                </a>
+                            </li>
 
                             <div class="logout">
-                                <button type="button" class="btn btn-danger"><img src="https://img.icons8.com/external-others-sbts2018/50/000000/external-logout-social-media-basic-1-others-sbts2018.png" height="30px"/> Log Out</button>
+                                <a href="../admin/sql/logout.php">
+                                    <button type="button" class="btn btn-danger"><img src="https://img.icons8.com/external-others-sbts2018/50/000000/external-logout-social-media-basic-1-others-sbts2018.png" height="30px"/> Log Out</button>
+                                </a>
                             </div>
                         </ul>
                         <hr>
