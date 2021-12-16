@@ -6,7 +6,7 @@
     $qty = $_SESSION['orderQty'];
     $total = $_SESSION['total'];
     $product_qty = $_SESSION['product_qty'];
-
+    
     $summary = $order." ".$qty." pc(s)";
 ?>
 <!DOCTYPE html>
