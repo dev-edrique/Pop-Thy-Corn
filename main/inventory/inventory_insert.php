@@ -105,18 +105,37 @@
 
                                     //proceed if no errors
                                     if(count($errors) == 0){
-                                        $imgData = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-                                        $imageProperties = getimageSize($_FILES['image']['tmp_name']);
+                                        if(!empty($_FILES['image']['tmp_name'])){
+                                            $imgData = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+                                            $imageProperties = getimageSize($_FILES['image']['tmp_name']);
 
-                                        $sql = "INSERT INTO products (product_name, product_price, product_qty, product_img) VALUES 
-                                        ('".$product_name."', '".$product_price."', '".$product_qty."', '".$imgData."')";
+                                            $sql = "INSERT INTO products (product_name, product_price, product_qty, product_img) VALUES 
+                                            ('".$product_name."', '".$product_price."', '".$product_qty."', '".$imgData."')";
 
-                                        if($conn->query($sql)){
-                                            echo "<script> alert('Product added!');</script>";
+                                            if($conn->query($sql)){
+                                                echo "<script> alert('Product added!');</script>";
+                                            }
+                                            else{
+                                                echo "<script> alert('Product failed to add');</script>";
+                                                    
+                                            }
                                         }
+                                        //insert blank img
                                         else{
-                                            echo "<script> alert('Product failed to add');</script>";
-                                                
+                                            $path = "default/empty.jpg";
+                                            $imgData = addslashes(file_get_contents($path));
+                                            $imageProperties = getimageSize($path);
+
+                                            $sql = "INSERT INTO products (product_name, product_price, product_qty, product_img) VALUES 
+                                            ('".$product_name."', '".$product_price."', '".$product_qty."', '".$imgData."')";
+
+                                            if($conn->query($sql)){
+                                                echo "<script> alert('Product added!');</script>";
+                                            }
+                                            else{
+                                                echo "<script> alert('Product failed to add');</script>";
+                                                    
+                                            }
                                         }
 
                                     }

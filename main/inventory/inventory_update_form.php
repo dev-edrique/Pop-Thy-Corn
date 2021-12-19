@@ -6,13 +6,12 @@
 
     <body>
         <!-- for populate of inputs -->
-        <form action="inventory_update_form.php" method="POST">
+        <form action="inventory_update_form.php" method="POST" enctype="multipart/form-data">
             <h1>Edit Product</h1>
             <?php require_once '../../config/dbConfig.php'; ?>
 
             <label/>Product: 
             <select name="choice">
-                <!-- <option value="">SELECT</option> -->
                 <!-- Show products -->
                 <?php
                     $sql = "SELECT * FROM products";
@@ -33,7 +32,7 @@
         </form>
 
         <!-- update -->
-        <form action="sql/update.php" method="POST">
+        <form action="sql/update.php" method="POST" enctype="multipart/form-data">
             
             <?php 
                 $product_id = "";
@@ -43,12 +42,6 @@
 
                 //populate inputs
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
-                    //include 'sql/update.php';
-                    // $product_id = $_POST['product_id'];
-                    // $product_name = $_POST['product_name'];
-                    // $product_price = $_POST['product_price'];
-                    // $product_qty = $_POST['product_qty'];
-
                     $sql = "SELECT * FROM products WHERE product_id='".$_POST['choice']."'";
                     $result = $conn->query($sql);
 
@@ -73,15 +66,13 @@
                             <input type="number" name="product_price" value="<?php echo $row['product_price'] ?>">
                             <br><br>
 
+                            <label>Insert Image: </label><br>
+                            <input type="file" name="image">
+                            <br><br>
+
                             <?php
                         }
-                    }
-                    //non sense since it always has id
-                    // else{
-                    //     echo "EMPTY";
-                    // }
-
-                    
+                    }  
                 }
             ?>
 
