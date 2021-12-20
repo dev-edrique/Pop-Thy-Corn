@@ -1,0 +1,30 @@
+body{
+   font-family: "Gill Sans", sans-serif;
+   background: #630E0D !important;
+}
+
+.cont{
+  
+   display: block !important;
+   margin-left: 4in;
+   margin-right: 4in;
+   background-color: #E9C75A;
+   padding: 20px;
+   margin-top: 1in;
+   border-radius: 20px;
+   font-size: 20px;
+}
+
+input{
+   width: 100%;
+   border-radius: 10px;
+}
+img.logs{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+h1{
+   text-align: center;
+}

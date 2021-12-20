@@ -1,0 +1,12 @@
+table{
+   text-align: center;
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+}
+
+th{
+   margin-left: 2in;
+   margin-right: 2in;
+}
+

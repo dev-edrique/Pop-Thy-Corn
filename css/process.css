@@ -1,0 +1,22 @@
+body{
+   font-family: "Gill Sans", sans-serif;
+   background: #630E0D !important;
+}
+
+.cont{
+  
+   display: block !important;
+   margin-left: 4in;
+   margin-right: 4in;
+   background-color: #E9C75A;
+   padding: 20px;
+   margin-top: 2in;
+   border-radius: 20px;
+   font-size: 20px;
+}
+
+input{
+   width: 100%;
+   border-radius: 10px;
+   font-size: 20px;
+}

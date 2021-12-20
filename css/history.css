@@ -1,3 +1,8 @@
+*{
+   font-family: "Gill Sans", sans-serif;
+
+}
+
 .nav-link:hover {
    background-color: #630E0D !important;
    color: #E9C75A !important;
@@ -29,7 +34,7 @@
 }
 
 .d-flex{
-   background-color: #E9C75A !important;
+   background-color: #E9C75A;
    color: #630E0D !important;
 }
 
@@ -43,11 +48,16 @@ a{
 }
 
 footer{
-   font-size: 10.5px;
+   font-size: 10.5px !important;
 }
+
+h1{
+   text-decoration: none !important;
+}
+
 h3{
    text-align: center;
-   color: #630E0D;
+   color:  #630E0D !important;
 }
 
 .logout{
