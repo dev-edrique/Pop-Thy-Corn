@@ -80,12 +80,14 @@
                      if($result->num_rows > 0){
                         //displays data from db
                         while($row = $result->fetch_assoc()){
+                           echo "<tr>";
                            echo "<td>".$row['invoice_id']."</td>";
                            echo "<td>".$row['order_desc']."</td>";
                            echo "<td>".$row['total_amount']."</td>";
                            echo "<td>".$row['cash']."</td>";
                            echo "<td>".$row['cash_change']."</td>";
                            echo "<td>".$row['date']."</td>";
+                           echo "</tr>";
                         }
                      }  
                      else{

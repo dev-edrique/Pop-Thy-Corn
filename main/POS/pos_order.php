@@ -65,6 +65,8 @@
                             <!-- Process for total -->
                             <?php $total = $row['product_price'] * $qty;?>
 
+                            <?php echo '<td>'."<img src='data:image/jpeg;base64,".base64_encode($row['product_img'])."'width=100px height=100px/>".'</td>'; ?><br><br>
+
                             <!-- Populates inputs -->
                             <label/>Product ID: 
                             <input type="number" name="product_id" readonly value="<?php echo $row['product_id'] ?>">
