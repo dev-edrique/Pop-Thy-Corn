@@ -18,7 +18,7 @@
             SET product_name='".$product_name."', product_qty='".$product_qty."', product_price='".$product_price."'
             WHERE product_id=$product_id");
 
-            echo "<script> alert('Product Updated!1');
+            echo "<script> alert('Product Updated!');
             window.location.href = '../inventory_update_form.php';
             </script>";
         }
@@ -32,7 +32,7 @@
             product_price='".$product_price."', product_img='".$imgData."'
             WHERE product_id=$product_id");
 
-            echo "<script> alert('Product Updated!2');
+            echo "<script> alert('Product Updated!');
             window.location.href = '../inventory_update_form.php';
             </script>";
         }
