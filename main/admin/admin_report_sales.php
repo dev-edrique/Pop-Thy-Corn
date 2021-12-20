@@ -22,8 +22,8 @@
             <div class="d-flex flex-column vh-100 flex-shrink-0 p-3" style="width: 220px;"> <svg class="bi me-2" width="40" height="32"> </svg> <img src="../../assets/logo.png" alt=""><h3>Point of Sales</h3>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
-                <li> <a href="admin_report_inventory.php" class="nav-link"> <i class="fa fa-dashboard"></i><span class="ms-2">Sales Report</span> </a> </li>
-                        <li> <a href="admin_report_sales.php" class="nav-link "> <i class="fa fa-first-order"></i><span class="ms-2">Inventory Report</span> </a> </li>
+                <li> <a href="admin_report_inventory.php" class="nav-link"> <i class="fa fa-dashboard"></i><span class="ms-2">Inventory Report</span> </a> </li>
+                        <li> <a href="admin_report_sales.php" class="nav-link "> <i class="fa fa-first-order"></i><span class="ms-2">Sales Report</span> </a> </li>
                         <li> <a href="admin_insert_employee.php" class="nav-link "> <i class="fa fa-first-order"></i><span class="ms-2">Manage Employee</span> </a> </li>
                     
                 </ul>
@@ -51,7 +51,8 @@
                 </div><br>
             
 
-            <h1>Report</h1><br>
+            <h2>Report</h2>
+            <hr>
 
             <table class="table table-striped table-hover">
             <tr>
