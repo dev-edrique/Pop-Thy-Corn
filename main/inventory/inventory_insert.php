@@ -13,7 +13,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS Link -->
-        <link rel="stylesheet" href="../../css/inventory_showProducts.css">
+        <link rel="stylesheet" href="../../css/inv_add.css">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <title>Inventory | New Product</title>
@@ -24,62 +24,56 @@
         <div class="container-fluid">
             <div class="row flex-nowrap">
                 <!-- 1ST COLUMN -->
-                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
-                    <img class="logo" src="../../assets/logo.png">
-                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                            <li>
-                                <a href="inventory_showProducts.php" class="nav-link px-0 align-middle">
-                                    <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Inventory</span></a>
-                            </li>
-
-                            <li>
-                                <a href="inventory_insert.php" class="nav-link px-0 align-middle ">
-                                    <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Add Products</span></a>
-                            </li>
-
-                            <li>
-                                <a href="inventory_update_form.php" class="nav-link px-0 align-middle ">
-                                    <i class="fs-4"></i><span class="ms-1 d-none d-sm-inline">Update Product</span>
-                                </a>
-                            </li>
-
-                            <div class="logout">
-                                <a href="../admin/sql/logout.php">
-                                    <button type="button" class="btn btn-danger"><img src="https://img.icons8.com/external-others-sbts2018/50/000000/external-logout-social-media-basic-1-others-sbts2018.png" height="30px"/> Log Out</button>
-                                </a>
-                            </div>
-                        </ul>
-                        <hr>
+                <div class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white" style="width: 220px;"> <svg class="bi me-2" width="40" height="32"> </svg> <img src="../../assets/logo.png" alt=""><h3>Inventory</h3>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li> <a href="inventory_showProducts.php" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Inventory</span> </a> </li>
+                        <li> <a href="inventory_insert.php" class="nav-link text-white"> <i class="fa fa-first-order"></i><span class="ms-2">Add Products</span> </a> </li>
+                        <li> <a href="inventory_update_form.php" class="nav-link text-white"> <i class="fa fa-cog"></i><span class="ms-2">Edit Products</span> </a> </li>
+                    </ul>
+                    <div class="logout">
+                        <a href="../admin/sql/logout.php">
+                            <button type="button" class="btn btn-danger"><img src="https://img.icons8.com/external-others-sbts2018/50/000000/external-logout-social-media-basic-1-others-sbts2018.png" height="30px"/> Log Out</button>
+                        </a>
                     </div>
-                </div> 
+                    <hr>
+                    
+                    <footer class="text-center text-lg-start">
+                        <!-- Copyright -->
+                        <div class="text-center p-3">
+                            Pop Thy Corn © 2021 Copyright
+                        </div>
+                    <!-- Copyright -->
+                    </footer>
+                </div>
+                
                 <!-- 2ND COLUMN -->
                 <div class="col">
                     <div class="row justify-content-center">
                         <div class="header">
-                            <h1>Inventory</h1>
+                            <h1>Add Products</h1>
                         </div>
                     </div><br>
 
-                    <h1>Add new Product</h1>
+                    <h1>Product Details</h1>
                     <hr>
                     <div class="row align-items-center">
-                        <form action="inventory_insert.php" method="POST" enctype="multipart/form-data">
+                        <form class="inputs" action="inventory_insert.php" method="POST" enctype="multipart/form-data">
 
                             <div class="col">
                                 <label>Product Name: </label><br>
                                 <input type="text" name="product_name">
-                            </div>
+                            </div><br>
 
                             <div class="col">
                                 <label>Product Price: </label><br>
                                 <input type="number" name="product_price">
-                            </div>
+                            </div><br>
 
                             <div class="col">
                                 <label>Product Quantity: </label><br>
                                 <input type="number" name="product_qty">
-                            </div>
+                            </div><br>
 
                             <label>Insert Image: </label><br>
                             <input type="file" name="image">
