@@ -19,11 +19,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="../../../css/invoice.css">
         <title>Invoice</title>
     </head>
 
     <body>
-        <h1>Invoice</h1>
+        <h1>Receipt</h1>
+        <hr>
         <form action="invoice.php" method="POST">
             <table>
             <tr>
@@ -100,7 +102,7 @@
                     ob_end_flush(); 
                 }
             ?>
-            </table>
+            </table> <br>
             <input type="submit" name="unset" value="Done">
             <input type="submit" name="pdf" value="Print Invoice">
         </form>
